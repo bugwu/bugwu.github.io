@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/LexicalScope.png">
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/lexicalScope2.png">
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/lexicalScope3.png">
-<meta property="og:updated_time" content="2018-11-27T13:56:12.843Z">
+<meta property="og:updated_time" content="2018-11-27T13:59:14.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="词法作用域之经典面试题">
 <meta name="twitter:description" content="不知道各位是否遇到过这样的面试题？1234567891011121314151617181920212223&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;      &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;      &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;      &amp;lt;script type=&quot;t">
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T21:56:12+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T21:59:14+08:00">
                 2018-11-27
               </time>
             
@@ -352,7 +352,7 @@
 <p>原理是</p>
 <h5 id="在迭代内使用-立即执行函数会为每个迭代都生成一个新的作用域，使得函数的回调可以将新的作用域封闭在每个迭代内部，每个迭代中都会含有一个具有正确值的变量供我们访问。"><a href="#在迭代内使用-立即执行函数会为每个迭代都生成一个新的作用域，使得函数的回调可以将新的作用域封闭在每个迭代内部，每个迭代中都会含有一个具有正确值的变量供我们访问。" class="headerlink" title="在迭代内使用 立即执行函数会为每个迭代都生成一个新的作用域，使得函数的回调可以将新的作用域封闭在每个迭代内部，每个迭代中都会含有一个具有正确值的变量供我们访问。"></a>在迭代内使用 立即执行函数会为每个迭代都生成一个新的作用域，使得函数的回调可以将新的作用域封闭在每个迭代内部，每个迭代中都会含有一个具有正确值的变量供我们访问。</h5><p>我们还有更简单方案如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">		arr[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			alert(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/lexicalScope3.png" alt="LexicalScope3"><br>只要改变一个var 为let 能得到这样意想不到的效果 </p>
-<h5 id="let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域"><a href="#let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域" class="headerlink" title="let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域"></a>let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域</h5><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>举一反三，如果遇到<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span> ; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">　&#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域"><a href="#let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域" class="headerlink" title="let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域"></a>let声明，可以用来劫持块作用域，并且在这个块作用域中声明一个变量。本质上这是将一个块转换成一个可以被关闭的作用域</h5><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>举一反三，如果遇到底下的代码，我们是不是可以一眼看出输出啥？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span> ; i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">　&#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -392,6 +392,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/27/如何查看浏览器的调用栈/" rel="prev" title="如何查看浏览器的调用栈">
+                如何查看浏览器的调用栈 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -479,7 +483,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
