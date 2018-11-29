@@ -79,26 +79,18 @@
 
 
 
-<meta name="description" content="前言   作为一名前端工程师，经常会出现在浏览器好好的，结果到手机上就不行了，还不知道该怎么做，pc端可以用f12看报错，手机端就没办法，那该怎么办呢？   接下来将带学习大家如何android和ios中如何调试 一.android 真机调试1.先决条件:app中开启了 WebView.setWebContentsDebuggingEnabled(true);2.windows电脑或者mac电脑均">
+<meta name="description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在ios和android应用(application)中调试">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/如何在ios和android应用-application-中调试/index.html">
+<meta property="og:title" content="原生js中的call和apply">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/原生js中的call和apply/index.html">
 <meta property="og:site_name" content="wuzhensheng">
-<meta property="og:description" content="前言   作为一名前端工程师，经常会出现在浏览器好好的，结果到手机上就不行了，还不知道该怎么做，pc端可以用f12看报错，手机端就没办法，那该怎么办呢？   接下来将带学习大家如何android和ios中如何调试 一.android 真机调试1.先决条件:app中开启了 WebView.setWebContentsDebuggingEnabled(true);2.windows电脑或者mac电脑均">
+<meta property="og:description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/161542885805_.pic.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/171542886513_.pic_hd.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/181542887848_.pic_hd.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/221542888954_.pic_hd.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/241542889864_.pic_hd.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/271542891333_.pic_hd.jpg">
-<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/291542891568_.pic.jpg">
-<meta property="og:updated_time" content="2018-11-29T03:04:06.679Z">
+<meta property="og:updated_time" content="2018-11-29T03:08:56.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在ios和android应用(application)中调试">
-<meta name="twitter:description" content="前言   作为一名前端工程师，经常会出现在浏览器好好的，结果到手机上就不行了，还不知道该怎么做，pc端可以用f12看报错，手机端就没办法，那该怎么办呢？   接下来将带学习大家如何android和ios中如何调试 一.android 真机调试1.先决条件:app中开启了 WebView.setWebContentsDebuggingEnabled(true);2.windows电脑或者mac电脑均">
-<meta name="twitter:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/161542885805_.pic.jpg">
+<meta name="twitter:title" content="原生js中的call和apply">
+<meta name="twitter:description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
 
 
 
@@ -128,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/22/如何在ios和android应用-application-中调试/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/21/原生js中的call和apply/"/>
 
 
 
 
 
-  <title>如何在ios和android应用(application)中调试 | wuzhensheng</title>
+  <title>原生js中的call和apply | wuzhensheng</title>
   
 
 
@@ -271,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/22/如何在ios和android应用-application-中调试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/原生js中的call和apply/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuzhensheng">
@@ -288,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何在ios和android应用(application)中调试</h1>
+          <h1 class="post-title" itemprop="name headline">原生js中的call和apply</h1>
         
 
         <div class="post-meta">
@@ -300,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-22T19:21:04+08:00">
-                2018-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-21T17:30:03+08:00">
+                2018-05-21
               </time>
             
 
@@ -341,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/22/如何在ios和android应用-application-中调试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/22/如何在ios和android应用-application-中调试/" itemprop="commentsCount"></span>
+                <a href="/2018/05/21/原生js中的call和apply/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/21/原生js中的call和apply/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -370,14 +362,12 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>   作为一名前端工程师，经常会出现在浏览器好好的，结果到手机上就不行了，还不知道该怎么做，pc端可以用f12看报错，手机端就没办法，那该怎么办呢？<br>   接下来将带学习大家如何android和ios中如何调试</p>
-<h2 id="一-android-真机调试"><a href="#一-android-真机调试" class="headerlink" title="一.android 真机调试"></a>一.android 真机调试</h2><font color="red"><br>1.先决条件:app中开启了 WebView.setWebContentsDebuggingEnabled(true);<br>2.windows电脑或者mac电脑均可<br></font><br>1.真机一台(android4.4之上)，先下载一个google浏览器<br>2.连上usb线，选择传输文件或者照片<br>3.在电脑google上面输入<font color="red">chrome://inspect/#devices</font> 如下图所示<br>4.在app(需要原生提供一个webView)中输入地址 我这边用的本机ip地址<br><a href="http://172.16.33.33:3330/demo/demo" target="_blank" rel="noopener">http://172.16.33.33:3330/demo/demo</a><br> <img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/161542885805_.pic.jpg" alt="inspect"><br>5.点击inspect进入，就会看到熟悉的调试界面<br> <img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/171542886513_.pic_hd.jpg" alt="debugger"><br>6.接下来就可以在当中按浏览器的操作进行debugger以及查看console的一些报错，是不是感觉很开心<br>7.<font color="blue">需要特别注意的是，需要翻墙才行，如果不能翻墙，啥都打不开</font><br>8.<font color="blue">具体翻墙教程，我这边提供一个第三方不错的教程,自己动手搭建SS服务器科学上网 <a href="https://www.yigeni.com/build-a-wall-ss-server/" target="_blank" rel="noopener">https://www.yigeni.com/build-a-wall-ss-server/</a> </font>
-
-
-<hr>
-<h2 id="二-ios-真机调试"><a href="#二-ios-真机调试" class="headerlink" title="二.ios 真机调试 "></a>二.ios 真机调试 </h2><p>1.需要一台Mac电脑和iphone手机，这个是先决条件<br>2.开启Safari开发菜单,Safari -&gt; 偏好设置… -&gt; 高级 -&gt; 勾选在菜单栏显示“开发”菜单。<br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/181542887848_.pic_hd.jpg" alt="safari"><br>3.iPhone开启Web检查器,具体步骤为：设置 -&gt; Safari -&gt; 高级 -&gt; Web 检查器。<br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/221542888954_.pic_hd.jpg" alt="safari"></p>
-<font color="blue"><br>4.打开app,随便打开一个地址<font color="red">注意，需要用xcode的开发者模式</font><br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/241542889864_.pic_hd.jpg" alt="safari"><br>5.正常一般可能没办法用app查看，用safari进行直接调试，具体步骤为: Safari -&gt; 输入地址 -&gt; 重复上面的4步骤<br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/271542891333_.pic_hd.jpg" alt="safari"><br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/291542891568_.pic.jpg" alt="safari"><br><br></font>
-
+        <p>obj.call(thisObj, arg1, arg2, …);<br>obj.apply(thisObj, [arg1, arg2, …]);<br>两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。</p>
+<p>唯一区别是apply接受的是数组参数，call接受的是连续参数。</p>
+<p>function add(j, k){<br>    return j+k;<br>}</p>
+<p>function sub(j, k){<br>    return j-k;<br>}<br>我们在控制台运行：</p>
+<p>add(5,3); //8<br>add.call(sub, 5, 3); //8<br>add.apply(sub, [5, 3]); //8</p>
+<p>sub(5, 3); //2<br>sub.call(add, 5, 3); //2<br>sub.apply(add, [5, 3]); //2</p>
 
       
     </div>
@@ -408,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/词法作用域之经典面试题/" rel="next" title="词法作用域之经典面试题">
-                <i class="fa fa-chevron-left"></i> 词法作用域之经典面试题
+              <a href="/2018/01/19/MarkDown常用技巧/" rel="next" title="Markdown的常用写法">
+                <i class="fa fa-chevron-left"></i> Markdown的常用写法
               </a>
             
           </div>
@@ -417,6 +407,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/css3实现水平垂直居中的方式总结/" rel="prev" title="css3实现水平垂直居中的方式总结">
+                css3实现水平垂直居中的方式总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,17 +469,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,22 +534,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-android-真机调试"><span class="nav-number">2.</span> <span class="nav-text">一.android 真机调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-ios-真机调试"><span class="nav-number">3.</span> <span class="nav-text">二.ios 真机调试 </span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
