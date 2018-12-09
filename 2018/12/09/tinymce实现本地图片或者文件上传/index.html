@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
+<meta name="description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生js中的call和apply">
-<meta property="og:url" content="http://yoursite.com/2018/05/21/原生js中的call和apply/index.html">
+<meta property="og:title" content="tinymce实现本地图片或者文件上传">
+<meta property="og:url" content="http://yoursite.com/2018/12/09/tinymce实现本地图片或者文件上传/index.html">
 <meta property="og:site_name" content="wuzhensheng">
-<meta property="og:description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
+<meta property="og:description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-29T03:08:56.866Z">
+<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png">
+<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-choose.png">
+<meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-has-choose.png">
+<meta property="og:updated_time" content="2018-12-09T05:48:08.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生js中的call和apply">
-<meta name="twitter:description" content="obj.call(thisObj, arg1, arg2, …);obj.apply(thisObj, [arg1, arg2, …]);两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。 唯一区别是apply接受的是数组参数，call接受的是连续参数。 functio">
+<meta name="twitter:title" content="tinymce实现本地图片或者文件上传">
+<meta name="twitter:description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
+<meta name="twitter:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/21/原生js中的call和apply/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/09/tinymce实现本地图片或者文件上传/"/>
 
 
 
 
 
-  <title>原生js中的call和apply | wuzhensheng</title>
+  <title>tinymce实现本地图片或者文件上传 | wuzhensheng</title>
   
 
 
@@ -263,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/原生js中的call和apply/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/tinymce实现本地图片或者文件上传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wuzhensheng">
@@ -280,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原生js中的call和apply</h1>
+          <h1 class="post-title" itemprop="name headline">tinymce实现本地图片或者文件上传</h1>
         
 
         <div class="post-meta">
@@ -292,8 +296,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-21T17:30:03+08:00">
-                2018-05-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T13:43:17+08:00">
+                2018-12-09
               </time>
             
 
@@ -333,8 +337,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/21/原生js中的call和apply/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/21/原生js中的call和apply/" itemprop="commentsCount"></span>
+                <a href="/2018/12/09/tinymce实现本地图片或者文件上传/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/12/09/tinymce实现本地图片或者文件上传/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -362,12 +366,14 @@
       
 
       
-        <p>obj.call(thisObj, arg1, arg2, …);<br>obj.apply(thisObj, [arg1, arg2, …]);<br>两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj『继承』了obj的属性和方法。绑定后会立即执行函数。</p>
-<p>唯一区别是apply接受的是数组参数，call接受的是连续参数。</p>
-<p>function add(j, k){<br>    return j+k;<br>}</p>
-<p>function sub(j, k){<br>    return j-k;<br>}<br>我们在控制台运行：</p>
-<p>add(5,3); //8<br>add.call(sub, 5, 3); //8<br>add.apply(sub, [5, 3]); //8</p>
-<p>sub(5, 3); //2<br>sub.call(add, 5, 3); //2<br>sub.apply(add, [5, 3]); //2</p>
+        <p>####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">tinymce.init(&#123;</span><br><span class="line">  selector: <span class="string">'textarea'</span>,  <span class="comment">// change this value according to your HTML</span></span><br><span class="line">  file_picker_types: <span class="string">'file image media'</span>,</span><br><span class="line">  file_picker_callback: <span class="function"><span class="keyword">function</span>(<span class="params">callback, value, meta</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Provide file and text for the link dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'file'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'mypage.html'</span>, &#123;<span class="attr">text</span>: <span class="string">'My text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide image and alt text for the image dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'image'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'myimage.jpg'</span>, &#123;<span class="attr">alt</span>: <span class="string">'My alt text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide alternative source and posted for the media dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'media'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'movie.mp4'</span>, &#123;<span class="attr">source2</span>: <span class="string">'alt.ogg'</span>, <span class="attr">poster</span>: <span class="string">'image.jpg'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>file_picker_types 是限制选择文件类型，file image media </p>
+<p>一旦配置弄好，我们跑起来,右边会出现一个放大镜的小图标<br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png" alt="tinymce"><br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-choose.png" alt="choose"></p>
+<p>完美</p>
+<p>选择文件之后，假设是图片，我们还需要对文件进行上传的一些操作<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">tinymce.init(&#123;</span><br><span class="line">  selector: <span class="string">'textarea'</span>,</span><br><span class="line">  file_picker_types: <span class="string">'file image media'</span>,</span><br><span class="line">  file_picker_callback: <span class="function"><span class="keyword">function</span>(<span class="params">callback, value, meta</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'image'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> input <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</span><br><span class="line">    input.setAttribute(<span class="string">'type'</span>, <span class="string">'file'</span>);</span><br><span class="line">    input.setAttribute(<span class="string">'accept'</span>, <span class="string">'image/*'</span>);</span><br><span class="line">    input.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> file = <span class="keyword">this</span>.files[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">        reader.readAsDataURL(file);</span><br><span class="line">        reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> base64 = reader.result;</span><br><span class="line">            _this.postBase64(base64,callback);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    input.click();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">postBase64(base64,callback)&#123;</span><br><span class="line">    <span class="keyword">let</span> _this=<span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">//ajax 请求在这边写，在ajax请求回来之后加入callBack，会显示在提示框中，显示名称和地址，具体如下图看</span></span><br><span class="line">    callback(<span class="string">'myimage.jpg'</span>, &#123;<span class="attr">alt</span>: <span class="string">'My alt text'</span>&#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-has-choose.png" alt="haschoose"></p>
+<p>附上官网地址以及对应配置的地址<br><a href="https://www.tiny.cloud/docs/demo/basic-example/" target="_blank" rel="noopener">https://www.tiny.cloud/docs/demo/basic-example/</a><br><a href="https://www.tiny.cloud/docs/configure/file-image-upload/#file_picker_callback" target="_blank" rel="noopener">https://www.tiny.cloud/docs/configure/file-image-upload/#file_picker_callback</a></p>
 
       
     </div>
@@ -398,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/19/MarkDown常用技巧/" rel="next" title="Markdown的常用写法">
-                <i class="fa fa-chevron-left"></i> Markdown的常用写法
+              <a href="/2018/11/22/如何在ios和android应用-application-中调试/" rel="next" title="如何在ios和android应用(application)中调试">
+                <i class="fa fa-chevron-left"></i> 如何在ios和android应用(application)中调试
               </a>
             
           </div>
@@ -407,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/19/css3实现水平垂直居中的方式总结/" rel="prev" title="css3实现水平垂直居中的方式总结">
-                css3实现水平垂直居中的方式总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
