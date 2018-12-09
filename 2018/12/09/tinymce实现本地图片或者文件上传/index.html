@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
+<meta name="description" content="使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to your HTM">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tinymce实现本地图片或者文件上传">
 <meta property="og:url" content="http://yoursite.com/2018/12/09/tinymce实现本地图片或者文件上传/index.html">
 <meta property="og:site_name" content="wuzhensheng">
-<meta property="og:description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
+<meta property="og:description" content="使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to your HTM">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png">
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-choose.png">
 <meta property="og:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-has-choose.png">
-<meta property="og:updated_time" content="2018-12-09T05:48:08.152Z">
+<meta property="og:updated_time" content="2018-12-09T05:53:11.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tinymce实现本地图片或者文件上传">
-<meta name="twitter:description" content="####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？ 1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to you">
+<meta name="twitter:description" content="使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？1234567891011121314151617181920tinymce.init(&amp;#123;  selector: &apos;textarea&apos;,  // change this value according to your HTM">
 <meta name="twitter:image" content="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png">
 
 
@@ -366,8 +366,7 @@
       
 
       
-        <p>####使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">tinymce.init(&#123;</span><br><span class="line">  selector: <span class="string">'textarea'</span>,  <span class="comment">// change this value according to your HTML</span></span><br><span class="line">  file_picker_types: <span class="string">'file image media'</span>,</span><br><span class="line">  file_picker_callback: <span class="function"><span class="keyword">function</span>(<span class="params">callback, value, meta</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Provide file and text for the link dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'file'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'mypage.html'</span>, &#123;<span class="attr">text</span>: <span class="string">'My text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide image and alt text for the image dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'image'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'myimage.jpg'</span>, &#123;<span class="attr">alt</span>: <span class="string">'My alt text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide alternative source and posted for the media dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'media'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'movie.mp4'</span>, &#123;<span class="attr">source2</span>: <span class="string">'alt.ogg'</span>, <span class="attr">poster</span>: <span class="string">'image.jpg'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <h4 id="使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？"><a href="#使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？" class="headerlink" title="使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？"></a>使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">tinymce.init(&#123;</span><br><span class="line">  selector: <span class="string">'textarea'</span>,  <span class="comment">// change this value according to your HTML</span></span><br><span class="line">  file_picker_types: <span class="string">'file image media'</span>,</span><br><span class="line">  file_picker_callback: <span class="function"><span class="keyword">function</span>(<span class="params">callback, value, meta</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Provide file and text for the link dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'file'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'mypage.html'</span>, &#123;<span class="attr">text</span>: <span class="string">'My text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide image and alt text for the image dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'image'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'myimage.jpg'</span>, &#123;<span class="attr">alt</span>: <span class="string">'My alt text'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Provide alternative source and posted for the media dialog</span></span><br><span class="line">    <span class="keyword">if</span> (meta.filetype == <span class="string">'media'</span>) &#123;</span><br><span class="line">      callback(<span class="string">'movie.mp4'</span>, &#123;<span class="attr">source2</span>: <span class="string">'alt.ogg'</span>, <span class="attr">poster</span>: <span class="string">'image.jpg'</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>file_picker_types 是限制选择文件类型，file image media </p>
 <p>一旦配置弄好，我们跑起来,右边会出现一个放大镜的小图标<br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce.png" alt="tinymce"><br><img src="http://wzs-person.oss-cn-beijing.aliyuncs.com/images/tinymce-choose.png" alt="choose"></p>
 <p>完美</p>
@@ -471,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？"><span class="nav-number">1.</span> <span class="nav-text">使用tinymce官方demo的时候，demo中图片或者是视频上传是直接输入文件云上地址的，在实际使用大部分还是希望直接从本地上传图片，今天我们来学习一下看如何实现？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
